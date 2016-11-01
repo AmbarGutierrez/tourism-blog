@@ -25,13 +25,34 @@
 //age
 
 const mongoose = require('mongoose');
-const blogSchema = mongoose.Schema({
+const postSchema = mongoose.Schema({
 	title: {type: String, require: true},
 	author: String,
 	date: Date,
 	tags: String,
+	images: String, 
+	comments: String
+});
+
+const userSchema = mongoose.Schema({
+	name: String, 
+	email: String, 
+	password: String,
+	bio: String, 
+	articles: Array
 })
-const Post = mongoose.model('Post', blogSchema)
+
+// const followerSchema = mongoose.Schema({
+// 	users: Number,
+// 	name: Array, 
+// 	comments: Array, 
+// 	email: Array, 
+// 	password: Array, 
+// 	date_joined: Array, 
+// 	age: 
+// })
+
+const Post = mongoose.model('Post', postSchema)
 
 
 
